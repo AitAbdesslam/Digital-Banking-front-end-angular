@@ -1,0 +1,53 @@
+<div class="container mt-2">
+  <div class="row">
+  <div class="col col-md-12">
+  <div class="card">
+    <!--{{customer | json}}-->
+    <div class="card-header">Customer :</div>
+    <div class="card-body">
+      <table class="table table-border">
+        <thead>
+          <tr>
+            <th>Name</th><th>Email</th><th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{customer.name}}</td>
+              <td>{{customer.email}}</td>
+              <td>
+                <button (click)="handleUpdateCustomer(customer)" class="btn btn-success m-2">
+                  Update
+                </button>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+
+
+  <div class="col col-md-12 mt-2">
+    <div class="card">
+    <div class="card-header">Customer Accounts :</div>
+    <div class="card-body">
+      <table class="table table-border">
+        <thead>
+          <tr>
+            <th>ID</th><th>Balance</th><th>Type</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let account of accounts">
+              <td>{{account.id}}</td>
+              <td>{{account.balance | number : '1.2-2'}}</td>
+              <td>{{account.type}}</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
